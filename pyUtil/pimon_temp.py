@@ -13,7 +13,7 @@ def main(argv):
     pimon = PiMon()
     while True:
         timestamp = int(time.time())
-        print('CPU Temperature: {} °C'.format(pimon.getTemp()))
+        print('CPU Temperature: {} C'.format(pimon.getTemp()))
         time.sleep(SECONDS)
 
 if __name__ == '__main__':
