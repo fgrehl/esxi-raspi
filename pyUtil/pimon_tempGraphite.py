@@ -23,6 +23,7 @@ if __name__ == '__main__':
     while True:
         timestamp = int(time.time())
         temperature = pimon.getTemp()
-        message = 'servers.%s.cputemp %s %d' % (node, temperature, timestamp)
-        send_graphite(message)
+        if temperature != 0:
+            message = 'servers.%s.cputemp %s %d' % (node, temperature, timestamp)
+            send_graphite(message)
         time.sleep(INTERVAL)
